@@ -7,3 +7,8 @@
 *.dylib
 *.test
 *.out
+
+#env
+.env
+.env.local
+.env.*.local

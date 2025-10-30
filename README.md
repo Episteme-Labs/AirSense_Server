@@ -291,75 +291,6 @@ make docker-build     # Build Docker image
 make docker-run       # Run Docker container
 ```
 
-## Monitoring & Logging
-
-### Health Check
-
-```bash
-curl http://localhost:8080/health
-```
-
-### Metrics
-
-Prometheus metrics available at:
-```
-http://localhost:8080/metrics
-```
-
-### Logs
-
-Logs are written to stdout in JSON format. In production, consider using:
-
-```bash
-# View structured logs
-docker logs airsense-be | jq
-
-# Or with log aggregation
-./bin/airsense-be 2>&1 | tee -a app.log
-```
-
-## Deployment
-
-### Kubernetes
-
-```bash
-kubectl apply -f k8s/deployment.yaml
-kubectl apply -f k8s/service.yaml
-```
-
-### Docker Swarm
-
-```bash
-docker stack deploy -c docker-compose.prod.yml airsense
-```
-
-### Cloud Deployment
-
-The application is cloud-agnostic and can be deployed on:
-- AWS ECS/EKS
-- Google Cloud Run/GKE
-- Azure Container Instances/AKS
-- Heroku
-- DigitalOcean App Platform
-
-## Troubleshooting
-
-### Common Issues
-
-1. **MQTT Connection Failed**
-   - Check MQTT broker is running
-   - Verify credentials in environment variables
-   - Check network connectivity
-
-2. **MongoDB Connection Failed**
-   - Verify MongoDB is running
-   - Check connection string format
-   - Ensure database exists and user has permissions
-
-3. **JWT Authentication Issues**
-   - Verify JWT_SECRET is set and sufficiently long
-   - Check token expiration settings
-
 ### Debug Mode
 
 Enable debug logging:
@@ -369,17 +300,11 @@ export LOG_LEVEL=debug
 ./bin/airsense-be
 ```
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Script Build
+```bash
+chmod +x build.sh
+./build.sh dev          # Usage: ./build.sh [dev|prod|test|clean|docker|release]
+```
 
 ## Support
 
