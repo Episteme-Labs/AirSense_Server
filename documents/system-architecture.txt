@@ -1,0 +1,11 @@
+┌─────────────┐    REST API     ┌─────────────┐    MQTT        ┌─────────────┐
+│   Mobile    │ ◄─────────────► │   Golang    │ ◄─────────────► │   IoT       │
+│    App      │    (HTTP/JSON)  │  Backend    │    (MQTT)      │  Devices    │
+└─────────────┘                 └─────────────┘                └─────────────┘
+                                      │                               │
+                                      │ MongoDB                       │ LCD Display
+                                      ▼                               │ Sensors
+                                ┌─────────────┐                       │ (PM2.5, CO2, etc.)
+                                │  Database   │
+                                │  (MongoDB)  │
+                                └─────────────┘

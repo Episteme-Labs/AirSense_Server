@@ -1,0 +1,9 @@
+#golang project
+/bin/
+/obj/
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out

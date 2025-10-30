@@ -1,0 +1,24 @@
+┌─────────────┐        ┌─────────────┐        ┌─────────────┐
+│   Users     │        │  Devices    │        │ Commands    │
+├─────────────┤        ├─────────────┤        ├─────────────┤
+│ _id         │┼──────┼│ _id         │┼──────┼│ command_id  │
+│ email       │        │ user_id     │        │ device_id   │
+│ password    │        │ name        │        │ action      │
+│ created_at  │        │ location    │        │ params      │
+└─────────────┘        │ created_at  │        │ status      │
+                       └─────────────┘        │ created_at  │
+                              │               └─────────────┘
+                              │
+                              ┼
+                     ┌─────────────┐
+                     │SensorData   │
+                     ├─────────────┤
+                     │ _id         │
+                     │ device_id   │
+                     │ timestamp   │
+                     │ sensors     │
+                     │   - pm25    │
+                     │   - co2     │
+                     │   - temp    │
+                     │   - humidity│
+                     └─────────────┘

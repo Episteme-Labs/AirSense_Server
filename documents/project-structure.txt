@@ -1,0 +1,48 @@
+airsense-be/
+├── cmd/
+│   └── server/
+│       └── main.go
+├── internal/
+│   ├── config/
+│   │   └── config.go
+│   ├── api/
+│   │   ├── handlers/
+│   │   │   ├── devices.go
+│   │   │   ├── commands.go
+│   │   │   └── history.go
+│   │   ├── middleware/
+│   │   │   └── auth.go
+│   │   └── routes.go
+│   ├── mqtt/
+│   │   ├── client.go
+│   │   ├── handler.go
+│   │   └── publisher.go
+│   ├── models/
+│   │   ├── device.go
+│   │   ├── sensor.go
+│   │   ├── command.go
+│   │   └── user.go
+│   ├── repository/
+│   │   ├── mongo/
+│   │   │   ├── device_repo.go
+│   │   │   ├── sensor_repo.go
+│   │   │   └── command_repo.go
+│   │   └── interfaces.go
+│   ├── service/
+│   │   ├── device_service.go
+│   │   ├── command_service.go
+│   │   ├── sensor_service.go
+│   │   └── user_service.go
+│   └── utils/
+│       ├── jwt.go
+│       └── validators.go
+├── pkg/
+│   └── mqttclient/
+│       └── client.go
+├── api/
+│   └── swagger/
+│       └── airsense.swagger.json
+├── docker-compose.yml
+├── Dockerfile
+├── go.mod
+└── Makefile

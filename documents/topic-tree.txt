@@ -1,0 +1,11 @@
+devices/
+├── {deviceID}/
+│   ├── data/           (Device → BE, QoS 0)
+│   │   └── {sensor readings}
+│   ├── status/         (Device → BE, QoS 1) 
+│   │   └── {health data}
+│   ├── commands/       (BE → Device, QoS 0)
+│   │   └── {control commands}
+│   └── response/
+│       └── {commandID}/ (Device → BE, QoS 1)
+│           └── {ack/response}

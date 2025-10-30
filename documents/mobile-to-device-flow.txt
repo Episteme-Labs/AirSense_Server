@@ -1,0 +1,16 @@
+Mobile App           REST API           MQTT Client          IoT Device
+   │                    │                    │                    │
+   │── GET /devices ───►│                    │                    │
+   │                    │── Query DB ───────►│                    │
+   │                    │◄─ Return List ─────│                    │
+   │◄─ JSON Response ───│                    │                    │
+   │                    │                    │                    │
+   │── POST /command ──►│                    │                    │
+   │                    │── Store Command ──►│                    │
+   │                    │◄─ Command ID ──────│                    │
+   │◄─ 202 Accepted ────│                    │                    │
+   │                    │── Publish MQTT ────────────────────────►│
+   │                    │                    │                    │
+   │── Poll Status ────►│                    │                    │
+   │                    │── Check Status ───►│                    │
+   │◄─ Status Update ───│                    │                    │

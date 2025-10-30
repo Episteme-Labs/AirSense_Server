@@ -1,0 +1,14 @@
+IoT Device           MQTT Broker         MQTT Handler         MongoDB
+   │                    │                    │                    │
+   │── Sensor Data ────►│                    │                    │
+   │                    │── dev/123/data ───►│                    │
+   │                    │                    │── Validate ───────►│
+   │                    │                    │── Store Data ─────►│
+   │                    │                    │                    │
+   │── Status Update ──►│                    │                    │
+   │                    │── dev/123/status ─►│                    │
+   │                    │                    │── Update Status ──►│
+   │                    │                    │                    │
+   │── Command Resp ───►│                    │                    │
+   │                    │── dev/123/res/xxx ─►│                   │
+   │                    │                    │── Update Command ─►│
